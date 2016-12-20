@@ -53,7 +53,9 @@
         <bundle:yield name="head"/>
     </head>
     <body>
-        
+        <div class="container logo-bar">
+        <img src="${bundle.location}/images/km_logo.png" alt="">
+    </div>
        <div ui-view="nav"></div>
     <div class="container">
         <div ui-view="main"></div>
