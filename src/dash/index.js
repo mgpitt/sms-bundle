@@ -10,4 +10,6 @@ function routes($stateProvider) {
 
 routes.$inject = ['$stateProvider'];
 
-export default angular.module('dash', [uiRouter]).name;
+export default angular.module('dash', [uiRouter])
+    .config(routes)
+    .name;

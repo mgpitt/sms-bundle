@@ -7,11 +7,14 @@ function routes($urlRouterProvider, $stateProvider) {
         .state('root', {
             abstract: true,
             views: {
+                nav: {
+                    template: 'nav'
+                },
                 main: {
-                    template: 'Main View <div ui-view></div>',
+                    template: '<div ui-view class="fx-fade-normal"></div>'
                 }
             }
-        })
+        });
 }
 
 routes.$inject = ['$urlRouterProvider', '$stateProvider'];

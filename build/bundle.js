@@ -37609,8 +37609,11 @@
 	    $stateProvider.state('root', {
 	        abstract: true,
 	        views: {
+	            nav: {
+	                template: 'nav'
+	            },
 	            main: {
-	                template: 'Main View <div ui-view></div>'
+	                template: '<div ui-view class="fx-fade-normal"></div>'
 	            }
 	        }
 	    });
@@ -37667,7 +37670,7 @@
 
 	routes.$inject = ['$stateProvider'];
 
-	exports.default = _angular2.default.module('dash', [_angularUiRouter2.default]).name;
+	exports.default = _angular2.default.module('dash', [_angularUiRouter2.default]).config(routes).name;
 
 /***/ }
 /******/ ]);

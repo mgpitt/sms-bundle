@@ -54,11 +54,10 @@
     </head>
     <body>
         
-        <div ui-view="nav"></div>
-            <div class="container">
-                <div ui-view="main"></div>
-            </div>
-            <div ui-view="foot"></div>
+       <div ui-view="nav"></div>
+    <div class="container">
+        <div ui-view="main"></div>
+    </div>
         
        
         <script src="${bundle.location}/build/bundle.js"></script>
