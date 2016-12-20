@@ -54,17 +54,18 @@
     </head>
     <body>
         
-        <c:import url="${bundle.path}/partials/navbar.jsp" charEncoding="UTF-8"/>
+        
         <div class="content">
             
             <div ui-view></div>
             
         </div>
         
-        <c:import url="${bundle.path}/partials/footer.jsp" charEncoding="UTF-8"/>
+       
         <script src="${bundle.location}/build/bundle.js"></script>
     </body>
     <script>
         window.identity = '${identity.username}';
+        console.log(K);
     </script>
 </html>
