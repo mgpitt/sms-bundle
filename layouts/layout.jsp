@@ -56,10 +56,11 @@
         
         <c:import url="${bundle.path}/partials/navbar.jsp" charEncoding="UTF-8"/>
         <div class="content">
-            <bundle:yield/>
             
+            <div ui-view></div>
+            <bundle:yield/>
         </div>
-        <div ui-view></div>
+        
         <c:import url="${bundle.path}/partials/footer.jsp" charEncoding="UTF-8"/>
         <script src="${bundle.location}/build/bundle.js"></script>
     </body>
