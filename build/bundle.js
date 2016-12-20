@@ -37671,18 +37671,26 @@
 
 	var _angularUiRouter2 = _interopRequireDefault(_angularUiRouter);
 
+	var _dash = __webpack_require__(16);
+
+	var _dash2 = _interopRequireDefault(_dash);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var dashTpl = __webpack_require__(15);
 
 	function routes($stateProvider) {
 	    $stateProvider.state('root.dash', {
 	        url: '/dash',
-	        template: 'Dashboard'
+	        template: dashTpl,
+	        controller: 'dashCtrl',
+	        controllerAs: '$ctrl'
 	    });
 	}
 
 	routes.$inject = ['$stateProvider'];
 
-	exports.default = _angular2.default.module('dash', [_angularUiRouter2.default]).config(routes).name;
+	exports.default = _angular2.default.module('dash', [_angularUiRouter2.default]).config(routes).controller('dashCtrl', _dash2.default).name;
 
 /***/ },
 /* 8 */
@@ -38077,6 +38085,30 @@
 
 	// exports
 
+
+/***/ },
+/* 15 */
+/***/ function(module, exports) {
+
+	module.exports = "<h3>Welcome to the dashboard</h3>"
+
+/***/ },
+/* 16 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	function dashCtrl() {
+	    var $ctrl = this;
+	    console.log($ctrl);
+	}
+
+	dashCtrl.$inject = [];
+
+	exports.default = dashCtrl;
 
 /***/ }
 /******/ ]);
