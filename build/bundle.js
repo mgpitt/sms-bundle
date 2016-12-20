@@ -37594,13 +37594,14 @@
 
 /***/ },
 /* 4 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
+	var navTpl = __webpack_require__(8);
 
 	function routes($urlRouterProvider, $stateProvider) {
 
@@ -37610,7 +37611,7 @@
 	        abstract: true,
 	        views: {
 	            nav: {
-	                template: 'nav'
+	                template: navTpl
 	            },
 	            main: {
 	                template: '<div ui-view class="fx-fade-normal"></div>'
@@ -37671,6 +37672,12 @@
 	routes.$inject = ['$stateProvider'];
 
 	exports.default = _angular2.default.module('dash', [_angularUiRouter2.default]).config(routes).name;
+
+/***/ },
+/* 8 */
+/***/ function(module, exports) {
+
+	module.exports = " <!-- Static navbar -->\r\n<nav class=\"navbar navbar-default navbar-static-top\" ng-controller=\"navCtrl as $ctrl\">\r\n    <div class=\"container\">\r\n        <div class=\"navbar-header\">\r\n            <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#navbar\" aria-expanded=\"false\" aria-controls=\"navbar\">\r\n                <span class=\"sr-only\">Toggle navigation</span>\r\n                <span class=\"icon-bar\"></span>\r\n                <span class=\"icon-bar\"></span>\r\n                <span class=\"icon-bar\"></span>\r\n            </button>\r\n        </div>\r\n        <div id=\"navbar\" class=\"navbar-collapse collapse\">\r\n            <ul class=\"nav navbar-nav\">\r\n                <li  ui-sref-active=\"active\">\r\n                    <a ui-sref=\"root.home\"><i class=\"fa fa-home fa-lg\"></i> Home</a>\r\n                </li>\r\n                \r\n            </ul>\r\n            <ul class=\"nav navbar-nav navbar-right fx-fade-normal\" >\r\n                <li ng-hide=\"$ctrl.auth\" ui-sref-active=\"active\">\r\n                    <a ui-sref=\"root.login\"><i class=\"fa fa-key fa-lg\"></i> Login</a>\r\n                </li>\r\n                <li class=\"dropdown\" uib-dropdown ng-show=\"$ctrl.auth\" ui-sref-active=\"active\">\r\n                    <a role=\"button\" class=\"dropdown-toggle\" uib-dropdown-toggle aria-haspopup=\"true\" aria-expanded=\"false\">\r\n                        <i class=\"fa fa-user fa-lg\"></i> {{$ctrl.user.name}}\r\n                        <b class=\"caret\"></b>\r\n                    </a>\r\n                    <ul class=\"dropdown-menu\">\r\n                        <li role=\"menuitem\" ui-sref-active=\"active\"><a ui-sref=\"root.user\" >Profile</a></li>\r\n                        <li role=\"menuitem\"><a href=\"#\" ng-click=\"$event.preventDefault(); $ctrl.logOut();\">Log Out</a></li>\r\n                    </ul>\r\n                </li> \r\n            </ul>\r\n        </div>\r\n    </div>\r\n</nav>"
 
 /***/ }
 /******/ ]);

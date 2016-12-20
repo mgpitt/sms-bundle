@@ -1,3 +1,4 @@
+const navTpl = require('./nav.tpl.html');
 
 function routes($urlRouterProvider, $stateProvider) {
 
@@ -8,7 +9,7 @@ function routes($urlRouterProvider, $stateProvider) {
             abstract: true,
             views: {
                 nav: {
-                    template: 'nav'
+                    template: navTpl,
                 },
                 main: {
                     template: '<div ui-view class="fx-fade-normal"></div>'
