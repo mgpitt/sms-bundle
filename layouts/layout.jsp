@@ -58,7 +58,7 @@
         <div class="content">
             
             <div ui-view></div>
-            <bundle:yield/>
+            
         </div>
         
         <c:import url="${bundle.path}/partials/footer.jsp" charEncoding="UTF-8"/>
