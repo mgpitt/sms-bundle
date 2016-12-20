@@ -1,4 +1,3 @@
-const homeTpl = require('./home.tpl.html');
 
 function routes($urlRouterProvider, $stateProvider) {
 
@@ -7,13 +6,12 @@ function routes($urlRouterProvider, $stateProvider) {
     $stateProvider
         .state('root', {
             abstract: true,
-            template:'<div ui-view></div>',
-            controller: 'sysCtrl'
+            views: {
+                main: {
+                    template: 'Main View <div ui-view></div>',
+                }
+            }
         })
-        .state('root.home',{
-            url:'/',
-            template: homeTpl
-        });
 }
 
 routes.$inject = ['$urlRouterProvider', '$stateProvider'];

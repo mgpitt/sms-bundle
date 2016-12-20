@@ -37590,14 +37590,13 @@
 
 /***/ },
 /* 4 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	var homeTpl = __webpack_require__(5);
 
 	function routes($urlRouterProvider, $stateProvider) {
 
@@ -37605,11 +37604,11 @@
 
 	    $stateProvider.state('root', {
 	        abstract: true,
-	        template: '<div ui-view></div>',
-	        controller: 'sysCtrl'
-	    }).state('root.home', {
-	        url: '/',
-	        template: homeTpl
+	        views: {
+	            main: {
+	                template: 'Main View <div ui-view></div>'
+	            }
+	        }
 	    });
 	}
 
@@ -37618,12 +37617,7 @@
 	exports.default = routes;
 
 /***/ },
-/* 5 */
-/***/ function(module, exports) {
-
-	module.exports = "Hello WOrld"
-
-/***/ },
+/* 5 */,
 /* 6 */
 /***/ function(module, exports) {
 
