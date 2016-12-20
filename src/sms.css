@@ -1,0 +1,33 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+html, body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.logo-bar {
+padding: 10px;
+}
+.sms-panel {
+    border-radius: 0px;
+}
+.sms-panel-heading {
+background-color: #007dc6;
+padding: 10px;
+outline: 1px solid #007dc6;
+}
+.sms-panel-title {
+    font-size: 1.5em;
+    padding: 0px;
+    margin: 0px;
+    color: white;
+    font-weight: bold;
+}
+
+.btn-sms {
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#feffff+0,ddf1f9+35,a0d8ef+100;Blue+3D+%2318 */
+background: #feffff; /* Old browsers */
+background: -moz-linear-gradient(top,  #feffff 0%, #ddf1f9 35%, #a0d8ef 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #feffff 0%,#ddf1f9 35%,#a0d8ef 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #feffff 0%,#ddf1f9 35%,#a0d8ef 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', endColorstr='#a0d8ef',GradientType=0 ); /* IE6-9 */
+border: 1px solid #999;
+}

@@ -23,6 +23,7 @@
             <bundle:style src="${bundle.location}/libraries/jquery-datatables/media/css/jquery.dataTables.css" />
             <bundle:style src="${bundle.location}/libraries/jquery-datatables/extensions/Responsive/css/responsive.dataTables.css" />
             <bundle:style src="${bundle.location}/libraries/animate/animate.css" />
+            <%--<bundle:style src="${bundle.location}/css/master.css "/>--%>
             <%--bundle:style src="${bundle.location}/libraries/font-awesome/css/font-awesome.css"/--%>
         </bundle:stylepack>
 
@@ -57,8 +58,6 @@
     <div class="container">
         <div ui-view="main"></div>
     </div>
-        
-       
         <script src="${bundle.location}/build/bundle.js"></script>
     </body>
     <script>
