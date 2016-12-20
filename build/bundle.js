@@ -58,9 +58,13 @@
 
 	var _routes2 = _interopRequireDefault(_routes);
 
+	var _controller = __webpack_require__(6);
+
+	var _controller2 = _interopRequireDefault(_controller);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	_angular2.default.module('sms', [_angularUiRouter2.default]).config(_routes2.default);
+	_angular2.default.module('sms', [_angularUiRouter2.default]).config(_routes2.default).controller('sysCtrl', _controller2.default);
 
 /***/ },
 /* 1 */
@@ -37617,6 +37621,23 @@
 /***/ function(module, exports) {
 
 	module.exports = "Hello WOrld"
+
+/***/ },
+/* 6 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	function systemCtrl() {
+	    console.log(K);
+	}
+
+	systemCtrl.$inject = [];
+
+	exports.default = systemCtrl;
 
 /***/ }
 /******/ ]);

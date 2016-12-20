@@ -66,6 +66,6 @@
     </body>
     <script>
         window.identity = '${identity.username}';
-        console.log(K);
+        window.K = K;
     </script>
 </html>
