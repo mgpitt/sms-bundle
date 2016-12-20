@@ -1,4 +1,5 @@
 const homeTpl = require('./home.tpl.html');
+import sysCtrl from './controller';
 
 function routes($urlRouterProvider, $stateProvider) {
 
@@ -7,7 +8,8 @@ function routes($urlRouterProvider, $stateProvider) {
     $stateProvider
         .state('root', {
             abstract: true,
-            template:'<div ui-view></div>'
+            template:'<div ui-view></div>',
+            controller: sysCtrl
         })
         .state('root.home',{
             url:'/',

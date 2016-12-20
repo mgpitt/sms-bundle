@@ -4,4 +4,4 @@ function systemCtrl() {
 
 systemCtrl.$inject = [];
 
-export default systemCtrl;
+export default systemCtrl.name;
