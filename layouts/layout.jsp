@@ -58,6 +58,7 @@
             <bundle:yield/>
         </div>
         <c:import url="${bundle.path}/partials/footer.jsp" charEncoding="UTF-8"/>
+        <script src="${bundle.location}/build/bundle.js"></script>
     </body>
     <script>
         window.identity = '${identity.username}';
