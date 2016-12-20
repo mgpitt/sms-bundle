@@ -1,7 +1,7 @@
 <%@page pageEncoding="UTF-8" contentType="text/html" trimDirectiveWhitespaces="true"%>
 <%@include file="../bundle/initialization.jspf" %>
 <!DOCTYPE html>
-<html>
+<html ng-app="sms">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -53,6 +53,7 @@
         <bundle:yield name="head"/>
     </head>
     <body>
+        <div ui-view></div>
         <c:import url="${bundle.path}/partials/navbar.jsp" charEncoding="UTF-8"/>
         <div class="content">
             <bundle:yield/>
