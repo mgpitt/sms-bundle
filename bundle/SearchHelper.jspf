@@ -1,0 +1,105 @@
+<%@page import="com.kineticdata.core.web.bundles.Bundle"%>
+<%@page import="java.io.InputStream"%>
+<%@page import="org.apache.http.entity.ContentType"%>
+<%@page import="java.util.HashMap"%>
+<%@page import="java.util.Map"%>
+<%@page import="com.google.common.net.HttpHeaders"%>
+<%@page import="org.apache.commons.codec.binary.Base64"%>
+<%@page import="org.apache.http.entity.StringEntity"%>
+<%@page import="org.apache.http.client.methods.HttpPost"%>
+<%@page import="com.kineticdata.bundles.Text"%>
+<%@page import="com.kineticdata.bundles.Json"%>
+<%@page import="com.kineticdata.core.bridging.Count"%>
+<%@page import="com.kineticdata.core.bridging.Record"%>
+<%@page import="com.kineticdata.core.bridging.RecordList"%>
+<%@page import="org.apache.http.client.HttpClient"%>
+<%@page import="org.apache.http.client.methods.HttpGet"%>
+<%@page import="org.apache.http.client.utils.URLEncodedUtils"%>
+<%@page import="org.apache.http.HttpResponse"%>
+<%@page import="org.apache.http.impl.cookie.BasicClientCookie"%>
+<%@page import="org.apache.http.impl.client.BasicCookieStore"%>
+<%@page import="org.apache.http.impl.client.HttpClientBuilder"%>
+<%@page import="org.apache.http.message.BasicNameValuePair"%>
+<%@page import="org.apache.http.NameValuePair"%>
+<%@page import="org.apache.http.util.EntityUtils"%>
+<%!
+    public static class SearchHelper {
+        private HttpServletRequest request;
+        private Bundle bundle;
+        private Space space;
+        private Kapp kapp;
+        private String apiLoc;
+        private I18nHelper i18n = null;
+
+        public SearchHelper(HttpServletRequest request,String kappApiLocation){
+            this.request = request;
+            this.bundle = (Bundle)request.getAttribute("bundle");
+            this.space = (Space)request.getAttribute("space");
+            this.kapp = (Kapp)request.getAttribute("kapp");
+            this.apiLoc = kappApiLocation; 
+        }
+
+        public SearchHelper(HttpServletRequest request,String kappApiLocation, I18nHelper i18n){
+            this.request = request;
+            this.bundle = (Bundle)request.getAttribute("bundle");
+            this.space = (Space)request.getAttribute("space");
+            this.kapp = (Kapp)request.getAttribute("kapp");
+            this.apiLoc = kappApiLocation; 
+            this.i18n = i18n;
+        }
+
+        public List<Form> filter(List<Form> forms, String queryString) throws Exception{
+            // Process the query string into a list
+            List<String> terms = new ArrayList<>();
+            for (String term : queryString.trim().split(" ")){
+                terms.add(term.toLowerCase());
+            }
+
+            List<Form> results = new ArrayList<>();
+            for (Form form : forms) {
+                if (form.getStatus().equals("Active") && matchesAllTerms(form, terms)) {
+                    results.add(form);
+                }
+            }
+            
+            return results;
+        }
+
+        private boolean matchesAllTerms(Form form, List<String> terms) {
+            boolean result = true;
+            for (String term : terms) {
+                if (!matchesTerm(form, term)) {
+                    result = false;
+                    break;
+                }
+            }
+            return result;
+        }
+
+        private boolean matchesTerm(Form form, String term) {
+            String formName = i18n != null ? i18n.translate(form,form.getName()) : form.getName();
+            String formDescription = i18n != null ? i18n.translate(form,form.getDescription()) : form.getDescription();
+            return matches(formName, term)
+                || matches(formDescription, term)
+                || anyAttributesMatch(form.getAttributes(), term);
+        }
+
+        private boolean matches(String source, String match) {
+            return source != null 
+                && match != null
+                && source.toLowerCase().contains(match.toLowerCase());
+        }
+
+        private boolean anyAttributesMatch(List<Attribute> attributes, String term) {
+            boolean result = false;
+            for (Attribute attribute : attributes) {
+                String attributeValue = i18n != null ? i18n.translate(attribute.getValue()) : attribute.getValue();
+                if (matches(attributeValue, term)) {
+                    result = true;
+                    break;
+                }
+            }
+            return result;
+        }
+    }
+%>

@@ -1,0 +1,68 @@
+/*sass file _footer*/
+$element: overlay content header;
+
+.footer-background{
+  background: #fff url("../images/background.png") repeat;
+}
+.footer--top{
+    position: relative;
+    border: none !important;
+}
+.footer--top__#{nth($element,1)}{
+    width: 100%;
+    background-color: $overlay-color;
+    filter: alpha(opacity=75); /* For IE8 and earlier */
+}
+.footer--top__#{nth($element,2)}{
+    padding: 1.5rem 0; /*equal to 35px*/
+}
+//.footer--top__#{nth($element,1)} > div > div > div:first-child > div:first-child{
+//    border-bottom: 0.35714285714rem solid #d6ce61;
+//}
+.footer--top__#{nth($element,1)} > div > div > div:not(:first-child) > div:first-child{
+    border-bottom: 0.35714285714rem solid #5ea5b2;
+}
+.footer--top__#{nth($element,1)} > div > div > div:not(:first-child) > div{
+    margin-left: 2.14285714286rem; /*equal to 30px*/
+}
+.footer--top__#{$element} > div > div > div:not(:first-child) > div > h5{
+    margin-bottom: 0;
+}
+.footer--top__header{
+    border-bottom: 0.35714285714rem solid #5ea5b2;
+    padding-bottom: 0.71429rem;
+    margin-bottom: 0.71429rem;
+}
+.footer--top__header--description{
+    @extend .footer--top__header;
+    border-color: #d6ce61;
+}
+.footer--bottom{
+  background-color: #fff;
+}
+.buildDate{
+  line-height: 4.285714286rem;
+  font-size: .75rem;
+  margin: 0;
+}
+.social-links{
+    margin: 0;
+    padding:0;
+    li{
+        list-style: none;
+        display: inline-block;
+        line-height: 4.285714286rem;
+    }
+}
+//// Sticky Footer
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.content {
+  flex: 1 1 auto;
+}

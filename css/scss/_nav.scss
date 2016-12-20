@@ -1,0 +1,307 @@
+/*sass file _nav*/
+.nav{
+    background-color: $primary;
+    .nav__list{
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+    }
+    li{
+        display: inline-block;
+        padding: .71428571428rem;
+        text-align: center;
+
+    }
+    a{
+        font-size: 1.125rem;
+        color: $white;
+    }
+}
+.nav__categories{
+  ul{
+    margin:0;
+    padding: 0;
+  }
+
+}
+.nav__text{
+    font-size: 1.5rem;
+    height: 2rem;
+    display: block;
+    //@include word-break;
+}
+.nav__box{
+    padding-top: 1.42857142857rem;
+    padding-bottom: 1.42857142857rem;
+    font-size: 1.429rem; /*equal to 20px*/
+    color: $white;
+    display: inline-block;
+    text-align: center;
+    width: 33%;
+    // Small
+    @media (min-width: 544px) {
+      width: 16.667%;
+    }
+    // Medium
+    @media (min-width: 768px) {
+      width: 16.667%;
+    }
+    // Large
+    @media (min-width: 992px) {
+      width: 16.667%;
+    }
+    // XLarge
+    @media (min-width: 1200px) {
+      width: 16.667%;
+    }
+    &:hover{
+      background-color: lighten($primary, 10%);
+    }
+}
+
+.nav__breadcrumb{
+
+    background: $primary-darkest url("../images/breadcrumb-internal-border.png") repeat left top;
+    background-size: 1em 3.5em;
+    border-bottom: 1px solid #fff;
+    .nav__list{
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+    li:not(:first-child)::before{
+      content:'/';
+    }
+    li{
+        float: left;
+        line-height: 3.4em;
+        max-width:100%;
+        color: $white;
+        &:first-child a{
+          padding-left: 0;
+        }
+    }
+    a{
+        font-size: 1.125rem;
+        color: $white;
+        padding: .8333em 0.75em .8333em 0.75em;
+    }
+}
+
+.nav-search-field{
+    .input-group{
+        width: 100%;
+        .form-control{
+            border-radius: 4px !important;
+        }
+    }
+    padding-top: 12px;
+    padding-bottom: 12px;
+    margin-right: 15px;
+    width: 100%;
+    // Small
+    @media (min-width: 544px) {
+      width: 100%;
+    }
+    // Medium
+    @media (min-width: 768px) {
+      width: 50%;
+      float: right;
+      padding-bottom: 0px;
+    }
+    // Large
+    @media (min-width: 992px) {
+      width: 50%;
+      padding-bottom: 0px;
+    }
+    // XLarge
+    @media (min-width: 1200px) {
+      width: 50%;
+      padding-bottom: 0px;
+    }
+}
+
+/* --------------------------------
+
+2. Auto-Hiding Navigation - with Sub Nav
+
+-------------------------------- */
+// colors
+
+$color-1: $primary; // YANKEES BLUE
+$color-2: #8F3985; // PLUM
+$color-4: #ECF0F1; // ANTI-FLASH WHITE
+
+// header size
+
+$header-height-small: 60px;
+$header-height: 80px;
+
+$nav__secondary-height-small: 50px;
+$nav__secondary-height: 70px;
+// center vertically and/or horizontally an absolute positioned element
+
+@mixin center($xy:xy) {
+  @if $xy == xy {
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    right: auto;
+    transform: translateX(-50%) translateY(-50%);
+  }
+  @else if $xy == x {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+  }
+  @else if $xy == y {
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%);
+  }
+}
+
+// color tint and shade
+
+@function shade(
+    $color,
+    $percent
+  ) {
+
+  @return mix(#000, $color, $percent);
+}
+@function tint(
+    $color,
+    $percent
+  ) {
+
+  @return mix(#fff, $color, $percent);
+}
+// breakpoints
+
+$S:     480px;
+$M:     768px;
+$L:     1024px;
+
+// media queries
+
+@mixin MQ($canvas) {
+  @if $canvas == S {
+   @media only screen and (min-width: $S) { @content; }
+  }
+  @else if $canvas == M {
+   @media only screen and (min-width: $M) { @content; }
+  }
+  @else if $canvas == L {
+   @media only screen and (min-width: $L) { @content; }
+  }
+}
+
+// super light grid system
+
+@mixin column($percentage, $float-direction:left) {
+  width: 100% * $percentage;
+  float: $float-direction;
+}
+
+
+.nav__secondary {
+	position: relative;
+	z-index: 1;
+	clear: both;
+	width: 100%;
+	height: $nav__secondary-height-small;
+	background-color: $color-1;
+	/* Force Hardware Acceleration */
+	transform: translateZ(0);
+	will-change: transform;
+	transition: transform .5s;
+
+	&::after {
+		/* gradient on the right - to indicate it's possible to scroll */
+		content: '';
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		right: 0;
+		height: 100%;
+		width: 35px;
+		background: transparent;
+		background: linear-gradient(to left, $color-1, rgba($color-1, 0));
+		pointer-events: none;
+		transition: opacity .2s;
+	}
+
+	&.nav-end::after {
+		opacity: 0;
+	}
+
+	ul, li, a {
+		height: 100%;
+	}
+
+	ul {
+		/* enables a flex context for all its direct children */
+		display: flex;
+		padding: 0;
+    margin: 0;
+		@include clearfix;
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+	}
+
+	li {
+		display: inline-block;
+		float: left;
+		/* do not shrink - elements float on the right of the element */
+		flex-shrink: 0;
+
+		&:last-of-type {
+			padding-right: 20px;
+		}
+	}
+
+	a {
+		display: block;
+		color: $white;
+		opacity: .8;
+		line-height: $nav__secondary-height-small;
+		padding: 0 1em 0 0;
+
+		&:hover, &.active {
+			opacity: 1;
+		}
+	}
+
+	@include MQ(L) {
+		height: $nav__secondary-height;
+		overflow: visible;
+
+		ul {
+			/* reset mobile style */
+			display: block;
+			//text-align: center;
+		}
+
+		li {
+			/* reset mobile style */
+			float: none;
+			flex-shrink: 1;
+		}
+
+		a {
+			line-height: $nav__secondary-height;
+
+			&.active {
+				color: $black;
+			}
+		}
+	}
+}
+
+.category__subcategory{
+  ul{
+    margin:1rem 0;
+    padding:0;
+  }
+}

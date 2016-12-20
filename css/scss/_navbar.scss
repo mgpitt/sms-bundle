@@ -1,0 +1,12 @@
+/*sass file _navbar*/
+//icon control in search box on catalog page (should this go in an image sass or the icon sass?)
+.avatar > img{
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+}
+
+//get better class names for navbar-collapse
+#navbar-collapse > ul > li:nth-child(1) > a{
+    padding: 0.71428571428rem 1rem 0.71428571428rem 1rem;
+}

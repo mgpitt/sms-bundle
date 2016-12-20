@@ -1,0 +1,15 @@
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
+
+.category__forms{
+    margin: 1rem 0;
+    h4{
+      margin-bottom: 1rem;
+    }
+}

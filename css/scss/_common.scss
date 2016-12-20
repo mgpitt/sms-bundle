@@ -1,0 +1,12 @@
+/*border control*/
+.border-none{
+    border: none;
+}
+
+// Text truncate
+// Requires inline-block or block for proper styling
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

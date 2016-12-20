@@ -1,0 +1,79 @@
+/*sass file _panels*/
+.max-min-height{
+    max-height: 7rem; /*equal to 98px*/
+    min-height: 7rem;
+}
+
+.arrow-right {
+    width: 0; 
+    height: 0; 
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent; 
+}
+
+@media(min-width: 992px){
+    .arrow_box {
+        position: relative;
+    }
+    .arrow_box:after, .arrow_box:before {
+        right: 100%;
+        top: 5rem;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+    }
+
+    .arrow_box:after {
+        border-color: rgba(204, 213, 187, 0);
+        border-right-color: #fff;
+        border-width: 14px;
+        margin-top: -40px;
+    }
+    .arrow_box:before {
+        border-color: rgba(194, 225, 245, 0);
+        border-width: 20px;
+        margin-top: -46px;
+    }
+}
+.panel{ 
+    border: none;
+}
+
+.panel-default{ 
+    box-shadow: 1px 4px 10px $gray-lighter;
+}
+
+.panel-body > table > tbody > tr:nth-child(even) > td:nth-child(1){ /*catalog could be replaced with more general catalog*/
+    border: none;
+}
+
+.panel-body > table > tbody > tr > td:nth-child(2){
+    vertical-align: bottom;
+}
+
+.panel__valign-text{
+    @media (max-width: 992px){
+        margin-top: -1%;
+    }
+    @media (min-width: 992px){
+        margin-top: 2%;
+    }
+    @media (min-width: 1200px){
+        margin-top: 3%;
+    }
+}
+
+.panel__valign-buttons{
+    @media (max-width: 992px){
+        line-height: 2rem; /*equal to 28px*/
+    }
+    @media (min-width: 992px){
+        line-height: 3rem; /*equal to 36px*/
+    }
+    @media (min-width: 1200px){
+        line-height: 4rem; /*equal to 48px*/
+    }
+}

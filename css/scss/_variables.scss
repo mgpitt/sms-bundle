@@ -1,0 +1,59 @@
+// Theme Colors
+$primary: #5ea5b2;
+$secondary: #ffa31c;
+$tertiary: #b996a5;
+
+$primary-darkest:      darken($primary, 30%);
+$primary-darker:       darken($primary, 20%);
+$primary-dark:         darken($primary, 10%);
+//Primary shades
+$primary-light:        lighten($primary, 10%);
+$primary-lighter:      lighten($primary, 20%);
+$primary-lightest:     lighten($primary, 30%);
+
+// Grays
+$black:             #000000;
+$gray-darkest:      lighten($black, 16%);
+$gray-darker:       lighten($black, 28%);
+$gray-dark:         lighten($black, 41%);
+$gray:              lighten($black, 52%);
+$gray-light:        lighten($black, 75%);
+$gray-lighter:      lighten($black, 83%);
+$gray-lightest:     lighten($black, 96%);
+$white:             #ffffff;
+
+// Backgrond Color
+$bg-color:          #f5f5f5;
+
+.background-tertiary{
+    background-color: #242e38 !important;
+}
+
+.background-quaternary{
+    background-color: #d6ce61 !important;
+}
+
+.background-white{
+    background-color: $white !important;
+}
+
+.white{
+    color: $white !important;
+}
+
+.gray{
+    color: $gray !important;
+}
+.gray-dark{
+    color: $gray-dark !important
+}
+
+// Margin & Padding Increments
+$margin-increment: 0.71428571428rem;
+$margin-count: 5;
+$padding-increment: 0.71428571428rem;
+$padding-count: 5;
+
+//over lay color
+$overlay-color: rgba(5, 12, 19, 0.75);
+

@@ -1,0 +1,22 @@
+/*sass file _utilities*/
+//for floats and text align, center block
+
+.display{
+    @at-root #{&}-inl-blk{
+    display: inline-block !important;
+    }
+    @at-root #{&}-blk{
+    display: block;
+    }
+}
+
+.line-height-50{
+    line-height: 3.57142857143rem; /*equal to 50px*/
+}
+.line-height-60{
+    line-height: 4.285714286rem; /*equal to 60/14 px*/
+}
+
+.line-height-70{
+    line-height: 5rem; /*equal to 70px*/
+}

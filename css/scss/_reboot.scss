@@ -1,0 +1,61 @@
+/*scss file _reboot*/
+html{
+    position: relative;
+    min-height: 100%;
+    font-size: 14px;
+}
+
+body{
+    background-color: $bg-color;
+    @extend .font;
+}
+
+h1 {
+    @extend .font-medium;
+    color:  #242e38;
+    margin: 0;
+    @media(max-width: 512px){
+        font-size: 1.75rem;
+    }
+    @media(min-width: 512px){
+        font-size: 2rem;
+    }
+    @media(min-width: 768px){
+        font-size: 2.5rem;
+    }
+    @media(min-width: 992px){
+        font-size: 3rem; /*equal to 42px*/
+    }
+}
+
+h3{
+    margin: 0;
+    @extend .font-medium;
+    font-size: 2rem; /*equal to 24px*/
+}
+
+h4{
+    @extend .font-medium;
+    margin: 0;
+    font-size: 1.28571428571rem; /*equal to 18px*/
+}
+
+p{
+    font-size: 1.14285714286em; /*equal to 16px*/
+}
+
+h5{
+    @extend .font-light;
+    font-size:  .857142857rem; /*equal to 12px*/
+}
+
+i{
+    color: $white;
+}
+
+a {
+    color: $primary-light;
+    @at-root &:hover{
+        color: $primary-dark;
+    }
+}

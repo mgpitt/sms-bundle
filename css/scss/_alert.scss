@@ -1,0 +1,34 @@
+/*sass file _alert*/
+.errors {
+    display: none;
+    margin:0 auto;
+    width:90%;
+}
+.errors 
+.build {
+    font-size: 11px;
+}
+
+.errors {
+    background-color: #faf0ef;
+    border: 1px solid #d5d5d5;
+    color: #000;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 60%;
+    p {
+    font-style: bold;
+    font-size: larger;
+    background-color: #cc0000;
+    border-bottom: 1px solid #d5d5d5;
+    padding-left: .5em;
+    padding-right: .5em;
+    color: white;
+    padding: 3px;
+        &.testing{
+        color:green;
+        background:red;
+        }
+    }
+    
+}

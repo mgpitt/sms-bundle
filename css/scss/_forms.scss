@@ -1,0 +1,134 @@
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ *   Forms
+ *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*form{
+    margin-left: 0;
+    padding: 26px 24px 46px;
+    font-weight: 400;
+    overflow: hidden;
+    background: #fff;
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.13);
+    box-shadow: 0 1px 3px rgba(0,0,0,.13);
+}*/
+form {
+  button {
+    background-color: #24B166;
+    color: #fff;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    margin-right: 1em;
+    font-size: 1em;
+    font-weight: 700;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    &[disabled]{
+      cursor: not-allowed;
+      filter: alpha(opacity=65);
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      opacity: .65;
+    }
+  }
+  label {
+    color: #62787d;
+    display: block;
+    font-size: 1em;
+    font-weight: 600;
+  }
+  .radio label:first-child {
+    padding-left: 0;
+    font-weight: 600;
+  }
+  .checkbox label {
+    &:first-child {
+      padding-left: 0;
+      font-weight: 600;
+    }
+    + input {
+      padding-left: 20px;
+    }
+  }
+  input {
+    &[type="text"],
+    &[type="password"]{
+      border: 2px solid #B3C1C4;
+      outline: none;
+      &:focus {
+          border-color: #7FCEE0;
+      }
+    }
+    &[type='text'][disabled],
+    &[type='password'][disabled],
+    &[type='radio'][disabled],
+    &[type='checkbox'][disabled],
+    &[disabled]{
+      cursor: not-allowed;
+    }
+    &[disabled]{
+      background-color: #eee;
+      opacity: 1;
+    }
+    &[readonly],
+    &[type='text'][readonly],
+    &[type='search'][readonly],
+    &[type='url'][readonly],
+    &[type='tel'][readonly],
+    &[type='email'][readonly],
+    &[type='number'][readonly],
+    &[type='password'][readonly]{
+      background-color: #eee;
+      opacity: 1;
+    }
+  }
+  textarea {
+    border: 2px solid #B3C1C4;
+    outline: none;
+    &:focus {
+      border-color: #7FCEE0;
+    }
+    &[disabled]{
+      cursor: not-allowed;
+    }
+    &[disabled],
+    &[readonly]{
+      background-color: #eee;
+      opacity: 1;
+    }
+  }
+  select{
+    &[disabled]{
+      cursor: not-allowed;
+    }
+    &[disabled]{
+      background-color: #eee;
+      opacity: 1;
+    }
+  }
+}
+
+/* Required asterisk after label */
+.checkbox.required label:first-child:after,
+.radio.required label:first-child:after,
+.form-group.required label:after {
+  content: '*';
+}
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ *   Override Form Styles
+ *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.requests form > div > i{
+    top: 0 !important;
+    right: 5px !important;
+    color: #c7c7c7;
+}

@@ -1,0 +1,24 @@
+/*sass file _header*/
+
+.header{
+    background: url("../images/background.png");
+    position: relative;
+}
+
+.header-height-tall{
+  .header__overlay{
+    margin-top: 2.5rem;
+  }
+}
+
+.header__overlay{
+    background-color: $overlay-color;
+    filter: alpha(opacity=75); /* For IE8 and earlier */
+    border: none;
+    border-radius: 0;
+    width: 100%;
+}
+
+.header__image{
+    height: 5rem;
+}

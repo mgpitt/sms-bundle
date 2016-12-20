@@ -1,0 +1,19 @@
+/*scss _submission-meta file*/
+.submission-meta{
+    background-color: $white;
+    border-right: 1px solid $gray-lightest;
+    -webkit-box-shadow: 1px 4px 10px $gray-lighter;
+    box-shadow: 1px 4px 10px $gray-lighter;
+    padding-top: 2.85714285714px; //equal to 40px
+    padding-bottom: 2.85714285714px;
+    padding-right: 3rem;
+}
+.submission-meta>h4:nth-child(even){
+    color: $gray;
+}
+.submission-meta>h4:nth-child(odd){
+    padding-top: 2rem;
+}
+.submission-meta>p{
+    padding: 2rem 0 2rem 0;
+}

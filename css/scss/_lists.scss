@@ -1,0 +1,55 @@
+/*sass file _lists*/
+.right-details {
+    @media(max-width: 991px){
+        padding-left: 0;
+        padding-right: 0;
+    }
+    @media(min-width: 992px){
+        padding-left: .9rem;
+    }
+    > ul{
+        padding: 0;
+        list-style: none;
+        > li{
+                position: relative;
+        }
+        @media(min-width: 992px){
+            margin-left: 2.25rem !important;
+            > li:before{
+                color: #5ea5b2;
+                content: '\f111';
+                font-family: 'FontAwesome';
+                position: absolute;
+                left: -5rem;
+                top: 4.25rem;
+            }
+        }
+    }
+}
+
+.right-details > ul::before{
+    @media(max-width: 992px){
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        height: 100%;
+        width: 2px;
+        background: black;
+    }
+}
+
+.right-details > ul > li > h4:nth-child(2){
+    color: #818181;
+}
+.right-details > ul > li > div > p{
+    color: #818181;
+    margin-top: 1.25rem;
+}
+
+
+
+
+
+
+

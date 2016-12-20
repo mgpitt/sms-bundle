@@ -1,0 +1,48 @@
+/*sass file _icons*/
+#list:active,
+#list.active,
+#grid:active,
+#grid.active{
+   text-shadow: 0px 0px 5px rgba($black,.4);
+}
+
+$color-names: black white gray gray-lighter primary secondary tertiary;
+$colors: $black $white $gray $gray-lighter $primary $secondary $tertiary;
+
+@each $color in $colors{
+    $i: index($colors, $color);
+    .icon-#{nth($color-names,$i)}{
+       color: $color;
+    }
+}
+.icon__pad--y{
+    padding-top: 1.07142857143rem;
+    padding-bottom: 0.92857142857rem;
+}
+
+.icon--size{
+    @media(max-width: 768px){
+        font-size: 2.5em !important;
+    }
+    @media(min-width: 768px){
+        font-size: 3em !important;
+    }
+    @media(min-width: 992px){
+        font-size: 4em !important;
+    }
+}
+
+.icon--size--small{
+    @media(max-width: 512px){
+        font-size: 1rem !important;
+    }
+    @media(min-width: 512px){
+        font-size: 1.25rem !important;
+    }
+    @media(min-width: 768px){
+        font-size: 1.5rem !important;
+    }
+    @media(min-width: 992px){
+        font-size: 2rem !important;
+    }
+}
