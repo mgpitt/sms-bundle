@@ -62,9 +62,13 @@
 
 	var _controller2 = _interopRequireDefault(_controller);
 
+	var _dash = __webpack_require__(7);
+
+	var _dash2 = _interopRequireDefault(_dash);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	_angular2.default.module('sms', [_angularUiRouter2.default]).config(_routes2.default).controller('sysCtrl', _controller2.default);
+	_angular2.default.module('sms', [_angularUiRouter2.default, _dash2.default]).config(_routes2.default).controller('sysCtrl', _controller2.default);
 
 /***/ },
 /* 1 */
@@ -37633,6 +37637,37 @@
 	systemCtrl.$inject = [];
 
 	exports.default = systemCtrl;
+
+/***/ },
+/* 7 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _angular = __webpack_require__(1);
+
+	var _angular2 = _interopRequireDefault(_angular);
+
+	var _angularUiRouter = __webpack_require__(3);
+
+	var _angularUiRouter2 = _interopRequireDefault(_angularUiRouter);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function routes($stateProvider) {
+	    $stateProvider.state('root.dash', {
+	        url: '/',
+	        template: 'Dashboard'
+	    });
+	}
+
+	routes.$inject = ['$stateProvider'];
+
+	exports.default = _angular2.default.module('dash', [_angularUiRouter2.default]).name;
 
 /***/ }
 /******/ ]);
