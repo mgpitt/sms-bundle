@@ -3,7 +3,7 @@ import uiRouter from 'angular-ui-router';
 
 function routes($stateProvider) {
     $stateProvider.state('root.dash', {
-        url:'/',
+        url:'/dash',
         template:'Dashboard'
     })
 }

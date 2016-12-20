@@ -1,7 +1,7 @@
 
 function routes($urlRouterProvider, $stateProvider) {
 
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/dash');
 
     $stateProvider
         .state('root', {

@@ -37604,7 +37604,7 @@
 
 	function routes($urlRouterProvider, $stateProvider) {
 
-	    $urlRouterProvider.otherwise('/');
+	    $urlRouterProvider.otherwise('/dash');
 
 	    $stateProvider.state('root', {
 	        abstract: true,
@@ -37660,7 +37660,7 @@
 
 	function routes($stateProvider) {
 	    $stateProvider.state('root.dash', {
-	        url: '/',
+	        url: '/dash',
 	        template: 'Dashboard'
 	    });
 	}
